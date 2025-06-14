@@ -1,173 +1,155 @@
-/* =================================
-   全局和基础样式
-==================================== */
 body {
-    /* 设置优雅的Calibri字体栈 */
     font-family: Calibri, Candara, "Segoe UI", Optima, Arial, sans-serif;
-    
     line-height: 1.6;
-    background-color: #fdfdfd; /* 给一个非常浅的背景色，比纯白更柔和 */
+    background-color: #fdfdfd; 
     color: #333;
     margin: 0;
     padding: 0;
-  }
-  
-  h2 {
-    border-bottom: 2px solid #eee; /* 给标题加一个下划线，模仿Rui Yan的风格 */
+}
+
+h2 {
+    border-bottom: 2px solid #eee;
     padding-bottom: 0.5rem;
     margin-top: 3rem;
     font-weight: 400;
     color: #000;
-  }
-  
-  /* =================================
-     居中容器样式
-  ==================================== */
-  .container {
-    max-width: 900px; /* 页面内容的最大宽度 */
-    margin: 0 auto;   /* 实现水平居中 */
-    padding: 2rem;    /* 页面内部的留白 */
-  }
-  
-  /* =================================
-     个人头部信息样式
-  ==================================== */
-  .profile-header {
-    display: flex;            /* 关键：开启Flexbox，让图片和简介并排 */
-    align-items: center;      /* 垂直居中对齐 */
-    margin-bottom: 3rem;      /* 和下面的正文内容拉开距离 */
-  }
-  
-  .profile-picture-container {
-    width: 150px;             /* 固定宽度 */
-    height: 150px;            /* 固定高度，确保是正方形 */
-    flex-shrink: 0;           /* 防止在屏幕缩小时被挤压变形 */
-    margin-right: 2.5rem;     /* 和右侧文字拉开距离 */
-  }
-  
-  .profile-picture-container img {
-    width: 100%;              /* 图片宽度占满容器 */
-    height: 100%;             /* 图片高度占满容器 */
-    border-radius: 50%;       /* 关键：让图片变成圆形 */
-    object-fit: cover;        /* 如果你的照片不是正方形，此功能可防止图片被拉伸，它会自动裁剪以适应圆形 */
-    border: 3px solid #eee;   /* 给头像加一个细细的边框 */
-  }
-  
-  .profile-details h1 {
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.profile-picture-container {
+    width: 150px;
+    height: 150px;
+    flex-shrink: 0;
+    margin-right: 2.5rem;
+}
+
+.profile-picture-container img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #eee;
+}
+
+.profile-details h1 {
     font-size: 2.2rem;
     margin: 0;
     font-weight: 400;
-  }
-  
-  .profile-details p {
-    margin: 0.3rem 0; /* 给每行简介文字一点垂直间距 */
+}
+
+.profile-details p {
+    margin: 0.3rem 0;
     font-size: 1.1rem;
     color: #444;
-  }
-  
-  .profile-details .profile-title {
+}
+
+.profile-details .profile-title {
     font-weight: bold;
-  }
-  
-  .social-links {
+}
+
+.social-links {
     margin-top: 1rem;
-  }
-  
-  .social-links a {
+}
+
+.social-links a {
     text-decoration: none;
-    color: #007bff; /* 一个友好的蓝色 */
+    color: #007bff;
     font-weight: bold;
-  }
-  
-  .social-links a:hover {
-    text-decoration: underline; /* 鼠标悬停时显示下划线 */
-  }
-  
-  
-  /* =================================
-     出版物列表样式
-  ==================================== */
-  .publication-item {
+}
+
+.social-links a:hover {
+    text-decoration: underline;
+}
+
+.publication-item {
     display: flex;
     align-items: flex-start;
     margin-bottom: 2.5rem;
-  }
-  
-  .publication-image {
+}
+
+.publication-image {
     width: 160px;
     flex-shrink: 0;
     margin-right: 1.5rem;
-  }
-  
-  .publication-image img {
+}
+
+.publication-image img {
     width: 100%;
     height: auto;
     border-radius: 5px;
     border: 1px solid #ddd;
-  }
-  
-  .publication-text {
+}
+
+.publication-text {
     flex-grow: 1;
-  }
-  
-  .publication-text p {
+}
+
+.publication-text p {
     margin: 0 0 0.4rem 0;
-  }
-  
-  .publication-text .title {
+}
+
+.publication-text .title {
     font-weight: bold;
     font-size: 1.1rem;
-  }
-  
-  .publication-text .authors {
+}
+
+.publication-text .authors {
     font-size: 0.95rem;
     color: #555;
-  }
-  
-  .publication-text .venue {
+}
+
+.publication-text .venue {
     font-style: italic;
     font-size: 0.95rem;
     color: #777;
-  }
+}
 
-/* 列表的整体样式 */
 .info-list {
-    list-style-type: none;  /* 移除默认的列表黑点 */
-    padding-left: 0;        /* 移除默认的左侧内边距 */
-    margin-top: 1.5rem;     /* 列表和上方H2标题的间距 */
-  }
-  
-  /* 每一个列表条目 (li) 的样式 */
-  .info-list li {
-    display: flex;                  /* 关键：开启Flexbox布局 */
-    justify-content: space-between; /* 关键：让内部的两个span元素左右分离，一个靠左，一个靠右 */
-    align-items: flex-start;        /* 垂直方向顶部对齐，防止因文字换行导致错位 */
-    padding: 0.4rem 0;              /* 每个条目上下的内边距，增加呼吸感 */
-    border-bottom: 1px solid #f0f0f0; /* 在每个条目下方加一条非常浅的分割线 */
-  }
-  
-  /* 左侧详细信息部分的样式 */
-  .info-item-details {
-    padding-right: 1.5rem; /* 和右侧的日期之间留出一些空隙 */
-  }
-  
-  /* 右侧日期部分的样式 */
-  .info-item-date {
-    color: #666;             /* 日期颜色稍浅，不那么突出 */
-    white-space: nowrap;      /* 防止日期文字（如 "Summer 2024"）自身换行 */
-    flex-shrink: 0;           /* 防止在空间不足时，日期被挤压变形 */
-  }
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 1.5rem;
+}
 
-  .subsection-title {
-    font-weight: 400;         /* 半粗 */
-    font-size: 1.2rem;      /* 字号比普通文字稍大 */
+.info-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0.4rem 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.info-item-details {
+    padding-right: 1.5rem;
+}
+
+.info-item-date {
+    color: #666;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.subsection-title {
+    font-weight: 400;
+    font-size: 1.2rem;
     color: #333;
-    margin-top: 2.0rem;     /* 和上面内容的间距 */
-    margin-bottom: 0.2rem;  /* 和下方列表的间距，稍微近一些 */
-  }
-  .info-list li .info-item-details::before {
-    content: '·';          /* 关键：设置要添加的内容为一个小圆点 */
-    margin-right: 0.75rem; /* 让圆点和后面的文字之间有一些间距 */
-    font-weight: bold;       /* 让圆点稍微粗一点，更清晰 */
-    color: #555;             /* 可以自定义圆点的颜色 */
-  }
+    margin-top: 2.0rem;
+    margin-bottom: 0.2rem;
+}
+
+.info-list li .info-item-details::before {
+    content: '·';
+    margin-right: 0.75rem;
+    font-weight: bold;
+    color: #555;
+}
